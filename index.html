@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shifti — Dein smarter Schicht- & Health-Begleiter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            rose: '#b48a9f',
+                            terracotta: '#c56b52',
+                            sage: '#8fa88b',
+                            dark: '#0a0a0a',
+                            card: '#141414',
+                            border: '#242424'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .feature-card:hover { transform: translateY(-4px); border-color: #c56b52; }
+        
+        /* Optimiertes Styling für deine Datenschutzerklärung */
+        .datenschutz-content h2 { color: #ffffff; font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid #242424; padding-bottom: 0.5rem; }
+        .datenschutz-content h3 { color: #ffffff; font-size: 1.15rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .datenschutz-content p { margin-bottom: 1rem; line-height: 1.6; color: #94a3b8; }
+        .datenschutz-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; color: #94a3b8; }
+        .datenschutz-content ul li { margin-bottom: 0.5rem; }
+        .datenschutz-content .index { list-style-type: none; padding-left: 0; }
+        .datenschutz-content .index li { margin-bottom: 0.25rem; }
+        .datenschutz-content .index-link { color: #b48a9f; transition: color 0.2s; }
+        .datenschutz-content .index-link:hover { text-decoration: underline; color: #c56b52; }
+        .datenschutz-content strong { color: #ffffff; }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-300 font-sans antialiased">
+
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-brand-dark/90 border-b border-brand-border">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img src="Logo Shifti.jpg" alt="Shifti Logo" class="w-10 h-10 rounded-xl object-cover border border-brand-border">
+                <span class="text-2xl font-black tracking-tight text-white">Shifti</span>
+            </div>
+            <div class="hidden lg:flex space-x-6 text-sm font-medium text-slate-400">
+                <a href="#features" class="hover:text-brand-terracotta transition">Features</a>
+                <a href="#pricing" class="hover:text-brand-terracotta transition">Preise</a>
+                <a href="#faq" class="hover:text-brand-terracotta transition">FAQ</a>
+                <a href="#impressum" class="hover:text-brand-terracotta transition">Impressum</a>
+                <a href="#agb" class="hover:text-brand-terracotta transition">AGB</a>
+                <a href="#eula" class="hover:text-brand-terracotta transition">EULA</a>
+                <a href="#widerruf" class="hover:text-brand-terracotta transition">Widerruf</a>
+                <a href="#datenschutz" class="hover:text-brand-terracotta transition text-brand-rose">Datenschutz</a>
+            </div>
+            <a href="https://shifti.lovable.app" target="_blank" class="bg-brand-terracotta hover:bg-opacity-90 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition shadow-lg shadow-brand-terracotta/20">
+                App öffnen
+            </a>
+        </div>
+    </nav>
+
+    <header class="relative overflow-hidden py-20 lg:py-28 border-b border-brand-border">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="mb-8 flex justify-center">
+                <div class="relative p-1 rounded-3xl bg-gradient-to-tr from-brand-terracotta via-brand-rose to-brand-sage">
+                    <img src="Logo Shifti.jpg" alt="Shifti App Logo" class="w-28 h-28 rounded-[22px] object-cover shadow-2xl">
+                </div>
+            </div>
+
+            <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-brand-rose/10 text-brand-rose border border-brand-rose/20 mb-6">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-rose animate-pulse"></span> Smarter Schicht- & Health-Begleiter
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-white mb-6 leading-tight">
+                Meistere deinen Schichtalltag mit <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-terracotta via-brand-rose to-brand-sage">Shifti</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+                Schichtplaner, Ernährungs-Tracking, adaptive Trainingspläne und smarte KI-Unterstützung perfekt abgestimmt auf deinen Rhythmus.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://shifti.lovable.app" target="_blank" class="w-full sm:w-auto bg-brand-terracotta hover:bg-opacity-90 text-white text-base font-bold px-8 py-4 rounded-2xl transition shadow-xl shadow-brand-terracotta/20 flex items-center justify-center gap-2">
+                    Jetzt kostenlos starten <i class="fa-solid fa-arrow-right text-sm"></i>
+                </a>
+                <a href="#features" class="w-full sm:w-auto bg-brand-card hover:bg-zinc-900 text-slate-200 text-base font-semibold px-8 py-4 rounded-2xl transition border border-brand-border text-center">
+                    Features entdecken
+                </a>
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(197,107,82,0.05)_0,transparent_100%)] pointer-events-none"></div>
+    </header>
+
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
+        <div class="grid grid-cols-3 bg-brand-card border border-brand-border rounded-2xl divide-x divide-brand-border shadow-2xl">
+            <div class="p-6 text-center">
+                <p class="text-2xl sm:text-4xl font-black text-white">24</p>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1">Gratis Features</p>
+            </div>
+            <div class="p-6 text-center">
+                <p class="text-2xl sm:text-4xl font-black text-brand-rose">10</p>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1">KI Kontingente</p>
+            </div>
+            <div class="p-6 text-center">
+                <p class="text-2xl sm:text-4xl font-black text-brand-sage">11</p>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1">Pro Module</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-white tracking-tight sm:text-4xl">Alles was du brauchst in einer App</h2>
+            <p class="mt-4 text-slate-400 max-w-xl mx-auto">Kein Chaos mehr mit verschiedenen Apps für Kalender, Ernährung und Gym.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-brand-card border border-brand-border p-6 rounded-2xl feature-card transition duration-300">
+                <div class="w-12 h-12 rounded-xl bg-brand-rose/10 border border-brand-rose/20 flex items-center justify-center text-brand-rose text-xl mb-5">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Smartes Dashboard</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-4">Schicht-Hero, Tagesmetriken, Schicht-Karte mit Countdown und Quick Actions direkt im Blick.</p>
+                <div class="flex flex-wrap gap-2"><span class="text-[10px] font-semibold bg-brand-sage/10 text-brand-sage px-2 py-0.5 rounded border border-brand-sage/20">Kostenlos</span></div>
+            </div>
+
+            <div class="bg-brand-card border border-brand-border p-6 rounded-2xl feature-card transition duration-300">
+                <div class="w-12 h-12 rounded-xl bg-brand-terracotta/10 border border-brand-terracotta/20 flex items-center justify-center text-brand-terracotta text-xl mb-5">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Schichtplaner</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-4">5 Schichttypen (Früh, Zwischen, Spät, Nacht, Frei) + Rufbereitschaft, KW-Anzeige und Pro Gruppen-Kalender.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[10px] font-semibold bg-brand-sage/10 text-brand-sage px-2 py-0.5 rounded border border-brand-sage/20">Basis Gratis</span>
+                    <span class="text-[10px] font-semibold bg-brand-rose/10 text-brand-rose px-2 py-0.5 rounded border border-brand-rose/20">Pro Sync</span>
+                </div>
+            </div>
+
+            <div class="bg-brand-card border border-brand-border p-6 rounded-2xl feature-card transition duration-300">
+                <div class="w-12 h-12 rounded-xl bg-brand-sage/10 border border-brand-sage/20 flex items-center justify-center text-brand-sage text-xl mb-5">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Ernährung & KI-Analyse</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-4">Mahlzeiten-Slots, Barcode-Scanner (Free). KI-Text- und Foto-Analyse, Ernährungsformen und Wasser-Tracking.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[10px] font-semibold bg-brand-sage/10 text-brand-sage px-2 py-0.5 rounded border border-brand-sage/20">Barcode Gratis</span>
+                    <span class="text-[10px] font-semibold bg-brand-rose/10 text-brand-rose px-2 py-0.5 rounded border border-brand-rose/20">KI-Scanner</span>
+                </div>
+            </div>
+
+            <div class="bg-brand-card border border-brand-border p-6 rounded-2xl feature-card transition duration-300">
+                <div class="w-12 h-12 rounded-xl bg-brand-rose/10 border border-brand-rose/20 flex items-center justify-center text-brand-rose text-xl mb-5">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Rezepte & Tracking</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-4">Manuelle Eingabe und 1-Tap Tracking sind kostenlos. Pro bietet KI Link-zu-Rezept Extraktion und Kochmodus.</p>
+                <div class="flex flex-wrap gap-2"><span class="text-[10px] font-semibold bg-brand-sage/10 text-brand-sage px-2 py-0.5 rounded border border-brand-sage/20">1-Tap Log Gratis</span></div>
+            </div>
+
+            <div class="bg-brand-card border border-brand-border p-6 rounded-2xl feature-card transition duration-300">
+                <div class="w-12 h-12 rounded-xl bg-brand-terracotta/10 border border-brand-terracotta/20 flex items-center justify-center text-brand-terracotta text-xl mb-5">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Schicht-adaptives Training</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-4">Live Workout-Execution, PRs und Progression (Free). Pro passt Pläne automatisch an Nachtschichten an.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[10px] font-semibold bg-brand-sage/10 text-brand-sage px-2 py-0.5 rounded border border-brand-sage/20">Live Tracker Gratis</span>
+                    <span class="text-[10px] font-semibold bg-brand-rose/10 text-brand-rose px-2 py-0.5 rounded border border-brand-rose/20">Auto-Anpassung</span>
+                </div>
+            </div>
+
+            <div class="bg-brand-card border border-brand-border p-6 rounded-2xl feature-card transition duration-300">
+                <div class="w-12 h-12 rounded-xl bg-brand-sage/10 border border-brand-sage/20 flex items-center justify-center text-brand-sage text-xl mb-5">
+                    <i class="fa-solid fa-capsules"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Supplements & Vorrat</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-4">Umfangreiche Marken-Datenbank, Vorrats-Tracking mit Low-Stock Warnung. Smarte schichtrelative Push-Erinnerungen.</p>
+                <div class="flex flex-wrap gap-2"><span class="text-[10px] font-semibold bg-brand-sage/10 text-brand-sage px-2 py-0.5 rounded border border-brand-sage/20">Datenbank Gratis</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 border-t border-brand-border bg-black/40">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white tracking-tight sm:text-4xl">Faire Preise, volle Flexibilität</h2>
+                <p class="mt-4 text-slate-400 max-w-xl mx-auto">Wähle das Modell, das am besten zu deinem Schichtrhythmus passt.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+                <div class="bg-brand-card border border-brand-border rounded-3xl p-8 relative flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Shifti Free</h3>
+                        <p class="text-slate-500 text-sm mt-1">Perfekt für den Einstieg</p>
+                        <div class="mt-4 flex items-baseline text-white">
+                            <span class="text-4xl font-black tracking-tight">0 €</span>
+                            <span class="ml-1 text-sm text-slate-500">/ für immer kostenlos</span>
+                        </div>
+                        <ul class="mt-6 space-y-4 text-sm text-slate-400 border-t border-brand-border pt-6">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-sage"></i> Alle Grundfunktionen</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-sage"></i> Begrenzte KI-Nutzung</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-sage"></i> Kein Ablaufdatum</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-sage"></i> 3 Monate Vorausplanung</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-sage"></i> Barcode-Scanner & Rezept-Eingabe</li>
+                        </ul>
+                    </div>
+                    <a href="https://shifti.lovable.app" target="_blank" class="mt-8 block w-full bg-transparent hover:bg-zinc-950 text-slate-200 text-center font-semibold py-3 px-4 rounded-xl transition border border-brand-border">
+                        Kostenlos starten
+                    </a>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border rounded-3xl p-8 relative flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Shifti Pro Monat</h3>
+                        <p class="text-brand-rose text-sm mt-1">Maximale Flexibilität</p>
+                        <div class="mt-4 flex items-baseline text-white">
+                            <span class="text-4xl font-black tracking-tight">6,99 €</span>
+                            <span class="ml-1 text-sm text-slate-500">/ pro Monat</span>
+                        </div>
+                        <p class="text-xs text-brand-rose/70 mt-1">jederzeit kündbar</p>
+                        <ul class="mt-4 space-y-4 text-sm text-slate-400 border-t border-brand-border pt-6">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-terracotta"></i> <strong>Unbegrenzte KI</strong> (Foto, Text, Pläne)</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-terracotta"></i> Gruppen-Kalender mit Live-Sync</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-terracotta"></i> <strong>Schicht-adaptive</strong> Trainingsanpassung</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-terracotta"></i> Volle Verlauf-History & Volumen-Charts</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-terracotta"></i> Gemeinsame freie Tage & Kochmodus</li>
+                        </ul>
+                    </div>
+                    <a href="https://shifti.lovable.app" target="_blank" class="mt-8 block w-full bg-transparent hover:bg-zinc-950 text-slate-200 text-center font-semibold py-3 px-4 rounded-xl transition border border-brand-border">
+                        Monatlich starten
+                    </a>
+                </div>
+
+                <div class="bg-brand-card border-2 border-brand-terracotta rounded-3xl p-8 relative flex flex-col justify-between shadow-2xl shadow-brand-terracotta/10">
+                    <div class="absolute top-0 right-6 -translate-y-1/2 bg-brand-terracotta text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">🔥 Jahres-Aktion</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Shifti Pro Jahr</h3>
+                        <p class="text-brand-sage text-sm font-bold mt-1">2 Monate gespart!</p>
+                        <div class="mt-4 flex items-baseline text-white">
+                            <span class="text-4xl font-black tracking-tight">69,99 €</span>
+                            <span class="ml-1 text-sm text-slate-500">/ pro Jahr</span>
+                        </div>
+                        <p class="text-xs text-brand-sage mt-1 font-medium"><i class="fa-solid fa-sparkles"></i> entspricht nur ca. 5,83 € / Monat</p>
+                        <ul class="mt-4 space-y-4 text-sm text-slate-400 border-t border-brand-border pt-6">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-sage"></i> <strong>Alle Pro-Features</strong> komplett inklusive</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-sage"></i> Volle 12 Monate Schicht-Erfolg</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-sage"></i> Dauerhafter Preisvorteil gegenüber Monatsabo</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-sage"></i> Bequeme jährliche Abrechnung</li>
+                        </ul>
+                    </div>
+                    <a href="https://shifti.lovable.app" target="_blank" class="mt-8 block w-full bg-brand-terracotta hover:bg-opacity-90 text-white text-center font-bold py-3 px-4 rounded-xl transition shadow-lg shadow-brand-terracotta/20">
+                        Jetzt 2 Monate sparen
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-20 border-t border-brand-border bg-brand-dark">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white tracking-tight sm:text-4xl">Häufig gestellte Fragen (FAQ)</h2>
+                <p class="mt-4 text-slate-400">Alles, was du über die Nutzung von Shifti wissen musst.</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-brand-card border border-brand-border p-6 rounded-2xl">
+                    <h3 class="text-base font-bold text-white mb-2 flex items-center gap-3">
+                        <i class="fa-solid fa-circle-question text-brand-terracotta"></i> Was genau macht das schicht-adaptive Training?
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed pl-7">
+                        Wenn du eine Nachtschicht eingetragen hast, passt Shifti deine Trainingsvorschläge und Regenerationszeiten automatisch an. Das bedeutet: Intensitätsanpassungen bei Schlafmangel oder Verschiebungen von schweren Einheiten, damit du dich nicht überlastest und verletzungsfrei bleibst.
+                    </p>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border p-6 rounded-2xl">
+                    <h3 class="text-base font-bold text-white mb-2 flex items-center gap-3">
+                        <i class="fa-solid fa-circle-question text-brand-terracotta"></i> Wie funktioniert der KI-Scanner bei den Mahlzeiten?
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed pl-7">
+                        In der Pro-Version kannst du dein Essen einfach fotografieren oder beschreiben. Unsere künstliche Intelligenz analysiert das Bild oder den Text, erkennt die Lebensmittel und trackt die geschätzten Makronährstoffe (Kalorien, Eiweiß, Kohlenhydrate, Fett) direkt in deinen Tages-Slots.
+                    </p>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border p-6 rounded-2xl">
+                    <h3 class="text-base font-bold text-white mb-2 flex items-center gap-3">
+                        <i class="fa-solid fa-circle-question text-brand-terracotta"></i> Kann ich meine Schichtpläne mit meiner Familie oder Partnern teilen?
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed pl-7">
+                        Ja! Mit dem Shifti Pro Gruppen-Kalender kannst du deinen Kalender für andere freigeben. Die App zeigt euch sogar automatisch eure gemeinsamen freien Tage an, was die Freizeit- und Familienplanung im Schichtdienst massiv erleichtert.
+                    </p>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border p-6 rounded-2xl">
+                    <h3 class="text-base font-bold text-white mb-2 flex items-center gap-3">
+                        <i class="fa-solid fa-circle-question text-brand-terracotta"></i> Wie viel spare ich bei der Jahresaktion genau?
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed pl-7">
+                        Bei der monatlichen Pro-Nutzung (6,99 €) würdest du im Jahr insgesamt 83,88 € zahlen. Mit unserer Jahresaktion für 69,99 € sparst du also fast genau 14 € – das entspricht rechnerisch zwei komplett kostenlosen Monaten Shifti Pro!
+                    </p>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border p-6 rounded-2xl">
+                    <h3 class="text-base font-bold text-white mb-2 flex items-center gap-3">
+                        <i class="fa-solid fa-circle-question text-brand-terracotta"></i> Sind meine Daten bei Shifti sicher?
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed pl-7">
+                        Absolut. Deine Daten werden verschlüsselt übertragen und verarbeitet. Kalenderfreigaben finden nur statt, wenn du Personen explizit dazu einlädst. Zudem werden deine Organisation- und Fitnessdaten streng vertraulich behandelt.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="impressum" class="py-16 border-t border-brand-border bg-brand-dark">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-slate-400">
+            <h2 class="text-2xl font-bold text-white mb-6">Impressum</h2>
+            <p class="mb-4"><strong>Angaben gemäß § 5 DDG</strong></p>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white font-semibold mb-2">Verantwortlich</h3>
+                    <p>Luca Schneider</p>
+                    <p>Alpenstraße 27</p>
+                    <p>86825 Bad Wörishofen</p>
+                    <p>Deutschland</p>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-2">Kontakt</h3>
+                    <p>E-Mail: <a href="mailto:info.shifti@gmx.de" class="text-brand-rose hover:underline">info.shifti@gmx.de</a></p>
+                    <p>Telefon: +49 170 1915156</p>
+                </div>
+            </div>
+
+            <div class="space-y-6 border-t border-brand-border pt-6">
+                <div>
+                    <h3 class="text-white font-semibold mb-1">Steuerliche Angaben</h3>
+                    <p>Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung).</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-1">Verbraucherstreitbeilegung</h3>
+                    <p class="mb-2">Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" class="text-brand-rose hover:underline">https://ec.europa.eu/consumers/odr</a>.</p>
+                    <p>Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle sind wir nicht verpflichtet und nicht bereit.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold mb-1">Haftungsausschluss</h3>
+                    <p>Die Inhalte dieser App und Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Die Nutzung der App ersetzt keine professionelle medizinische oder psychologische Beratung oder Behandlung.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="agb" class="py-16 border-t border-brand-border bg-black/20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-slate-400">
+            <h2 class="text-2xl font-bold text-white mb-6">Allgemeine Geschäftsbedingungen</h2>
+            <p class="mb-2"><strong>Stand: 24. April 2026</strong></p>
+            <p class="mb-6 text-slate-500 italic">Wichtiger Hinweis: Diese AGB dienen der Information für den betrieb der App Shifti. Trotz sorgfältiger Erstellung wird keine Haftung für die rechtliche Vollständigkeit übernommen; eine Prüfung durch einen Rechtsanwalt wird empfohlen.</p>
+
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-white font-semibold mb-2">1. Geltungsbereich</h3>
+                    <p>Diese AGB gelten für die Nutzung der App „Shifti“ sowie für alle damit verbundenen Dienstleistungen von Luca Schneider (nachfolgend „Anbieter“) an Verbraucher. Verbraucher ist jede natürliche Person, die ein Rechtsgeschäft zu einem Zwecke abschließt, der überwiegend weder ihrer gewerblichen noch ihrer selbstständigen beruflichen Tätigkeit zugerechnet werden kann.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold mb-2">2. Vertragspartner</h3>
+                    <p>Der Vertrag kommt zustande mit:</p>
+                    <div class="bg-brand-card p-4 rounded-xl border border-brand-border mt-2">
+                        <p class="text-white font-medium">Luca Schneider</p>
+                        <p>Alpenstraße 27</p>
+                        <p>86825 Bad Wörishofen</p>
+                        <p>Deutschland</p>
+                        <p>E-Mail: <a href="mailto:info.shifti@gmx.de" class="text-brand-rose hover:underline">info.shifti@gmx.de</a></p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold mb-2">3. Vertragsschluss, Abonnements &amp; Verfügbarkeit</h3>
+                    <p class="mb-2">3.1. Die Darstellung der Funktionen innerhalb der App stellt kein rechtlich bindendes Angebot dar.</p>
+                    <p class="mb-2">3.2. Durch das Abschließen eines Abonnements (In-App-Kauf) gibt der Nutzer ein verbindliches Angebot ab. Der Vertrag kommt mit der Bestätigung durch den jeweiligen App Store (Apple App Store / Google Play Store oder die Web-App-Zahlungsplattform) zustande.</p>
+                    <p class="mb-2">3.3. Abonnements verlängern sich automatisch um die gewählte Laufzeit (monatlich oder jährlich), sofern sie nicht mindestens 24 Stunden vor Ablauf der aktuellen Periode in den Einstellungen des jeweiligen App Stores bzw. Kontoprofils gekündigt werden.</p>
+                    <p>3.4. Eine 100%ige Verfügbarkeit der App kann technisch nicht garantiert werden. Der Anbieter haftet nicht für Schäden, die durch technische Störungen, fehlerhafte Push-Meldungen oder Verbindungsprobleme entstehen, sofern diese nicht auf grober Fahrlässigkeit oder Vorsatz beruhen.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold mb-2">4. Medizinischer Disclaimer (Kein Medizinprodukt)</h3>
+                    <p class="mb-2">4.1. Shifti ist kein Medizinprodukt. Die App dient ausschließlich der allgemeinen Organisation des Schichtplans sowie der Förderung von Fitness, Ernährungstracking und des allgemeinen Wohlbefindens im Schichtalltag.</p>
+                    <p class="mb-2">4.2. Die automatisierten Empfehlungen, schicht-adaptiven Trainingspläne sowie die Antworten des „KI-Scanners / AI-Coach“ basieren auf statistischen Algorithmen. Sie stellen lediglich unverbindliche Orientierungshilfen dar und sind keine medizinische, orthopädische oder ernährungswissenschaftliche Diagnose, Beratung oder Behandlung.</p>
+                    <p>4.3. Die Nutzung der App ersetzt nicht den Besuch bei einem Arzt, Ernährungsberater oder Therapeuten. Bei körperlichen Beschwerden, Schlafstörungen oder gesundheitlichen Belastungen sollte umgehend professionelle medizinische Hilfe in Anspruch genommen werden.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold mb-2">5. Besondere Bedingungen für Schichtkalender &amp; Team-Synchronisation</h3>
+                    <p class="mb-2">5.1. Der Nutzer ist selbst dafür verantwortlich, eingetragene Schichten, Freizeiten und Team-Kalender auf Richtigkeit zu prüfen. Der Anbieter übernimmt keine Haftung für berufliche Nachteile, verpasste Schichten oder Fehlplanungen, die durch fehlerhafte Kalenderdaten oder ausbleibende Push-Benachrichtigungen entstehen.</p>
+                    <p>5.2. Die Nutzung von schicht-adaptiven Erinnerungen (z. B. für Supplements oder Mahlzeiten) entbindet den Nutzer nicht von der eigenen Sorgfaltspflicht zur korrekten Einnahme oder Versorgung.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold mb-2">6. Widerrufsrecht</h3>
+                    <p class="mb-2">Verbrauchern steht ein gesetzliches 14-tägiges Widerrufsrecht zu.</p>
+                    <p>Besonderer Hinweis zum vorzeitigen Erlöschen: Das Widerrufsrecht erlischt bei Verträgen über digitale Inhalte vorzeitig, wenn wir mit der Ausführung des Vertrags begonnen haben, nachdem Sie ausdrücklich zugestimmt haben, dass wir vor Ablauf der Widerrufsfrist beginnen, und Sie Ihre Kenntnis davon bestätigt haben, dass Sie dadurch Ihr Widerrufsrecht verlieren.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold mb-2">7. Preise &amp; Zahlung</h3>
+                    <p class="mb-2">7.1. Die angegebenen Preise sind Endpreise. Gemäß § 19 UStG (Kleinunternehmerregelung) wird keine Umsatzsteuer ausgewiesen.</p>
+                    <p>7.2. Die Abrechnung erfolgt über die im jeweiligen App Store oder beim Zahlungsdienstleister hinterlegte Methode des Nutzers.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold mb-2">8. Haftung für KI-Inhalte (AI-Coach &amp; Rezept-Scanner)</h3>
+                    <p class="mb-2">8.1. Die KI-gestütten Funktionen generieren Antworten und Nährwertanalysen auf Basis automatisierter Algorithmen. Diese Inhalte können faktisch ungenau oder fehlerhaft sein (Halluzinationen künstlicher Intelligenz).</p>
+                    <p>8.2. Der Anbieter übernimmt keine Gewähr für die Richtigkeit, Vollständigkeit oder Lebensmittelsicherheit der durch die Künstliche Intelligenz extrahierten Rezepte, Nährwertangaben oder Ratschläge. Die Umsetzung und der Verzehr erfolgen vollständig auf eigene Gefahr des Nutzers.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold mb-2">9. Haftungsbeschränkung</h3>
+                    <p>Die Haftung des Anbieters ist auf Vorsatz und grobe Fahrlässigkeit beschränkt, es sei denn, es handelt sich um Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit oder um die Verletzung wesentlicher Vertragspflichten (Kardinalpflichten).</p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold mb-2">10. Schlussbestimmungen &amp; Streitbeilegung</h3>
+                    <p class="mb-2">10.1. Es gilt das Recht der Bundesrepublik Deutschland.</p>
+                    <p>10.2. Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle sind wir weder bereit noch verpflichtet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="eula" class="py-16 border-t border-brand-border bg-brand-dark">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-slate-400">
+            <h2 class="text-2xl font-bold text-white mb-6">Endnutzer-Lizenzvereinbarung (EULA)</h2>
+            <p class="mb-2"><strong>Stand: 24. April 2026</strong></p>
+            <p class="mb-6">Diese App (&quot;Shifti&quot;) wird an Sie lizenziert, nicht verkauft. Die Nutzung der App unterliegt der Annahme dieser Endnutzer-Lizenzvereinbarung (EULA).</p>
+
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-white font-semibold mb-2">1. Geltung der Standard-EULA</h3>
+                    <p>Für die Nutzung dieser App gilt primär die Standard-Lizenzvereinbarung für Endbenutzer (Standard EULA) von Apple. Sie können diese unter folgendem Link einsehen: <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" class="text-brand-rose hover:underline">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold mb-2">2. Ergänzende Bedingungen &amp; AGB</h3>
+                    <p>Zusätzlich zur Standard-EULA von Apple gelten die Allgemeinen Geschäftsbedingungen (AGB) von Shifti. Diese enthalten spezifische Regelungen zu den Funktionen der App (insbesondere zu Abonnements, Synchronisation und KI-Kontingenten).</p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold mb-2">3. Besondere Haftungsausschlüsse</h3>
+                    <p class="mb-3">Mit der Nutzung von Shifti bestätigen Sie insbesondere die Kenntnisnahme folgender Punkte:</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>Schicht- und Terminkalender:</strong> Der Anbieter übernimmt keine Gewähr für die korrekte Übermittlung, Benachrichtigung oder fehlerfreie Kalendersynchronisation im Teamalltag. Für versäumte Arbeitszeiten oder Schichten wird keine Haftung übernommen.</li>
+                        <li><strong>KI-Funktionen (Text-, Foto- &amp; Tagesanalyse / Coach):</strong> Die durch die integrierte künstliche Intelligenz generierten Antworten, Auswertungen, Trainingstipps oder Ernährungsempfehlungen dienen ausschließlich der unverbindlichen Information und Orientierung. Sie stellen keine medizinische, psychologische oder ernährungswissenschaftliche Beratung oder Behandlung dar. Der Anbieter übernimmt keine Gewähr für die Richtigkeit der KI-generierten Daten oder Analysen.</li>
+                        <li><strong>Schicht-adaptives Training &amp; Progression:</strong> Die App bietet Vorschläge zur progressiven Überlastung und passt Trainingspläne automatisch an Schichtmuster an. Die Nutzung erfolgt auf eigene Gefahr. Bei körperlichen Beschwerden ist das Training sofort abzubrechen und ein Arzt zu konsultieren.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold mb-2">4. Kontakt</h3>
+                    <p>Bei Fragen zu dieser Vereinbarung wenden Sie sich bitte an:</p>
+                    <p>E-Mail: <a href="mailto:info.shifti@gmx.de" class="text-brand-rose hover:underline">info.shifti@gmx.de</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="widerruf" class="py-16 border-t border-brand-border bg-black/20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-slate-400">
+            <h2 class="text-2xl font-bold text-white mb-6">Widerrufsbelehrung</h2>
+            <p class="mb-6">Verbraucher haben ein vierzehntägiges Widerrufsrecht.</p>
+
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-white font-semibold mb-2">Widerrufsrecht</h3>
+                    <p class="mb-4">Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsabschlusses.</p>
+                    <p class="mb-4">Um Ihr Widerrufsrecht auszuüben, müssen Sie uns:</p>
+                    <div class="bg-brand-card p-4 rounded-xl border border-brand-border mb-4">
+                        <p class="text-white font-medium">Luca Schneider</p>
+                        <p>Alpenstraße 27</p>
+                        <p>86825 Bad Wörishofen</p>
+                        <p>E-Mail: <a href="mailto:info.shifti@gmx.de" class="text-brand-rose hover:underline">info.shifti@gmx.de</a></p>
+                    </div>
+                    <p>mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief oder eine E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.</p>
+                    <p class="mt-4">Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold mb-2">Folgen des Widerrufs</h3>
+                    <p>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist. Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold mb-2">Vorzeitiges Erlöschen des Widerrufsrechts</h3>
+                    <p class="mb-2">Das Widerrufsrecht erlischt bei einem Vertrag über die Lieferung von nicht auf einem körperlichen Datenträger befindlichen digitalen Inhalten vorzeitig, wenn der Unternehmer mit der Ausführung des Vertrags begonnen hat, nachdem der Verbraucher:</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>ausdrücklich zugestimmt hat, dass der Unternehmer mit der Ausführung des Vertrags vor Ablauf der Widerrufsfrist beginnt, und</li>
+                        <li>seine Kenntnis davon bestätigt hat, dass er durch seine Zustimmung mit Beginn der Ausführung des Vertrags sein Widerrufsrecht verliert.</li>
+                    </ul>
+                </div>
+
+                <div class="border-t border-brand-border pt-6">
+                    <h3 class="text-white font-semibold mb-2">Muster-Widerrufsformular</h3>
+                    <p class="mb-4 text-slate-500">(Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und senden Sie es zurück.)</p>
+                    
+                    <div class="bg-brand-card p-6 rounded-xl border border-brand-border font-mono text-xs whitespace-pre-line text-slate-300">
+                        An:
+                        Luca Schneider
+                        Alpenstraße 27
+                        86825 Bad Wörishofen
+                        E-Mail: info.shifti@gmx.de
+
+                        Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Waren (*)/die Erbringung der folgenden Dienstleistung (*):
+
+                        Bestellt am (*)/erhalten am (*):
+
+                        Name des/der Verbraucher(s):
+
+                        Anschrift des/der Verbraucher(s):
+
+
+                        Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier):
+
+                        Datum:
+
+                        (*) Unzutreffendes streichen.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="datenschutz" class="py-16 border-t border-brand-border bg-brand-dark">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-slate-400 datenschutz-content">
+            <h2 class="text-2xl font-bold text-white mb-6">Datenschutzerklärung</h2>
+            
+            </div>
+    </section>
+
+    <footer class="border-t border-brand-border py-8 text-center text-xs text-slate-600 bg-brand-card">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p>&copy; 2026 Shifti. Alle Rechte vorbehalten.</p>
+            <p class="mt-1">Erstellt für Shifti — Deinen Schicht- & Gesundheitscoach.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
